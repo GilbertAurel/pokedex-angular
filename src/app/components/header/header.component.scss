@@ -1,0 +1,21 @@
+@import 'src/styles/colors/colors.scss';
+
+.header {
+  height: 4.375rem;
+  width: 100vw;
+  padding: 0 3.125rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+
+  &__product {
+    max-height: 1.563rem;
+    object-fit: cover;
+  }
+
+  &__avatar {
+    max-height: 2.25rem;
+    border-radius: 50%;
+  }
+}
