@@ -5,4 +5,10 @@
   display: flex;
   flex-direction: column;
   background-color: $background;
+
+  &__router + * {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
 }
