@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "server": "json-server --watch pokemon.json --port 5000"
+    "server": "json-server --watch pokemon.json --port 5000",
+    "postinstall": "husky install && husky add .husky/pre-commit \"npx lint-staged\""
   },
   "private": true,
   "dependencies": {
@@ -41,13 +42,22 @@
     "@typescript-eslint/eslint-plugin": "4.28.2",
     "@typescript-eslint/parser": "4.28.2",
     "eslint": "^7.26.0",
+    "husky": "^7.0.2",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "lint-staged": "^11.2.0",
     "prettier": "^2.4.1",
+    "pretty-quick": "^3.1.1",
     "typescript": "~4.3.5"
+  },
+  "lint-staged": {
+    "*.{js,css,scss,md,ts,html}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }
