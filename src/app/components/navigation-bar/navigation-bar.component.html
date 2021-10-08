@@ -1,1 +1,9 @@
-<p>navigation-bar works!</p>
+<div class="navbar">
+  <div class="navbar__menu" *ngFor="let menu of menus">
+    <a class="navbar__title" href="{{ menu.path }}">{{ menu.title }}</a>
+    <mat-icon class="navbar__arrow" *ngIf="menu.subMenus"
+      >keyboard_arrow_down</mat-icon
+    >
+  </div>
+  <a class="navbar__switch_dashboard" href="">Switch to Old Dashboard</a>
+</div>
