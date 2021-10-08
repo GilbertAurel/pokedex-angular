@@ -59,8 +59,4 @@ export const MENUS: Menu[] = [
       },
     ],
   },
-  {
-    title: 'Interview Schedule',
-    path: '',
-  },
 ];
