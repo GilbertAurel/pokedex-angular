@@ -7,9 +7,10 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, HeaderComponent],
+  declarations: [AppComponent, DashboardComponent, HeaderComponent, NavigationBarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
