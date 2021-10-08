@@ -1,4 +1,6 @@
 @import 'src/styles/colors/colors.scss';
+@import 'src/styles/fonts/sizes.scss';
+@import 'src/styles/icons/sizes.scss';
 
 .header {
   height: 4.375rem;
@@ -9,13 +11,48 @@
   align-items: center;
   background-color: $white;
 
-  &__product {
-    max-height: 1.563rem;
+  &__logo {
+    max-height: 2.25rem;
     object-fit: cover;
+  }
+
+  &__tools {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   &__avatar {
     max-height: 2.25rem;
     border-radius: 50%;
+  }
+
+  &__username {
+    margin: 0;
+    padding: 0;
+    color: $text;
+    font-size: $body;
+  }
+
+  &__notification {
+    height: $icon-height;
+    width: $icon-width;
+    color: $gray-button;
+  }
+
+  &__product {
+    max-height: 1.563rem;
+    object-fit: cover;
+  }
+
+  &__spacer {
+    height: 1.563rem;
+    border-left: 0.05rem solid $gray-section;
   }
 }
