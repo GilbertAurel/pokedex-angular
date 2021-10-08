@@ -1,9 +1,12 @@
 <div class="navbar">
-  <div class="navbar__menu" *ngFor="let menu of menus">
-    <a class="navbar__title" href="{{ menu.path }}">{{ menu.title }}</a>
-    <mat-icon class="navbar__arrow" *ngIf="menu.subMenus"
-      >keyboard_arrow_down</mat-icon
-    >
+  <div class="navbar__menus">
+    <a class="navbar__button" *ngFor="let menu of menus" href="{{ menu.path }}">
+      <p class="navbar__title">{{ menu.title }}</p>
+      <mat-icon class="navbar__arrow" *ngIf="menu.subMenus"
+        >keyboard_arrow_down</mat-icon
+      >
+    </a>
+    <a class="navbar__interview_button" href="">Interview Schedule</a>
   </div>
   <a class="navbar__switch_dashboard" href="">Switch to Old Dashboard</a>
 </div>
