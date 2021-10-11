@@ -10,7 +10,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, HeaderComponent, NavigationBarComponent],
+  declarations: [
+    AppComponent,
+    DashboardComponent,
+    HeaderComponent,
+    NavigationBarComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
