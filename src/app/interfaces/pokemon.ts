@@ -6,8 +6,8 @@ interface Stats {
 export interface Pokemon {
   id: number;
   name: string;
-  url?: string;
-  details?: {
+  url: string;
+  details: {
     height: number;
     weight: number;
     stats: Stats[];
