@@ -1,6 +1,5 @@
-@import 'src/styles/colors/colors.scss';
-
 .dashboard {
   flex: 1;
-  background-color: $background;
+  display: grid;
+  grid-template-rows: 80% auto;
 }

@@ -1,6 +1,24 @@
-<div>
-  <app-pokemon-card
-    *ngFor="let pokemon of pokemonList"
-    [pokemon]="pokemon"
-  ></app-pokemon-card>
+<div class="list">
+  <button class="list__scroll-btn">
+    <mat-icon
+      class="list__arrow-icon"
+      aria-hidden="false"
+      aria-label="arrow left"
+      >arrow_left</mat-icon
+    >
+  </button>
+  <div class="list__pokemons">
+    <app-pokemon-card
+      *ngFor="let pokemon of pokemonList"
+      [pokemon]="pokemon"
+    ></app-pokemon-card>
+  </div>
+  <button class="list__scroll-btn">
+    <mat-icon
+      class="list__arrow-icon"
+      aria-hidden="false"
+      aria-label="arrow right"
+      >arrow_right</mat-icon
+    >
+  </button>
 </div>

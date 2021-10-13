@@ -1,0 +1,9 @@
+@import 'src/styles/colors/colors.scss';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $gray-section;
+}
