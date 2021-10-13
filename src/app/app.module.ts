@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
+import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
     HeaderComponent,
     NavigationBarComponent,
     PokemonListComponent,
+    PokemonCardComponent,
   ],
   imports: [
     BrowserModule,
