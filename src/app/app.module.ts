@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
+import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.com
     NavigationBarComponent,
     PokemonListComponent,
     PokemonCardComponent,
+    PokemonDetailsComponent,
   ],
   imports: [
     BrowserModule,
