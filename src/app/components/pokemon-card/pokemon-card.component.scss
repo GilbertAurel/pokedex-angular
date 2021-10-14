@@ -10,6 +10,13 @@
   background-color: transparent;
   border: none;
 
+  &:hover {
+    img {
+      height: 100%;
+      transition: 0.3s height;
+    }
+  }
+
   &-selected {
     img {
       height: 100%;
