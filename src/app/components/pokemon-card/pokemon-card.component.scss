@@ -1,9 +1,24 @@
 @import 'src/styles/colors/colors.scss';
 
 .card {
+  height: 10rem;
+  width: 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid $gray-section;
+  background-color: transparent;
+  border: none;
+
+  &-selected {
+    img {
+      height: 100%;
+      transition: 0.3s height;
+    }
+  }
+
+  &__image {
+    height: 80%;
+    object-fit: cover;
+  }
 }
