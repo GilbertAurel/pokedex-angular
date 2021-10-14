@@ -10,6 +10,7 @@
   <div class="list__pokemons">
     <app-pokemon-card
       *ngFor="let pokemon of pokemonList"
+      (selectPokemon)="onClick($event)"
       [pokemon]="pokemon"
     ></app-pokemon-card>
   </div>

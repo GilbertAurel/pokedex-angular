@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Pokemon } from 'src/app/interfaces/pokemon';
 
 @Component({
@@ -8,6 +8,11 @@ import { Pokemon } from 'src/app/interfaces/pokemon';
 })
 export class PokemonListComponent {
   @Input() pokemonList!: Pokemon[];
+  @Output() selectPokemon = new EventEmitter();
 
   constructor() {}
+
+  onClick(selectedPokemon: Pokemon) {
+    this.selectPokemon.emit(selectedPokemon);
+  }
 }
