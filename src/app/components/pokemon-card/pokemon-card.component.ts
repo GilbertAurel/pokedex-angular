@@ -8,6 +8,7 @@ import { Pokemon } from 'src/app/interfaces/pokemon';
 })
 export class PokemonCardComponent {
   @Input() pokemon!: Pokemon;
+  @Input() selectedPokemonId?: number;
   @Output() selectPokemon = new EventEmitter();
 
   constructor() {}

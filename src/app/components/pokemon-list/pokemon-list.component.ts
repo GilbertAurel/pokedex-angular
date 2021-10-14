@@ -9,10 +9,12 @@ import { Pokemon } from 'src/app/interfaces/pokemon';
 export class PokemonListComponent {
   @Input() pokemonList!: Pokemon[];
   @Output() selectPokemon = new EventEmitter();
+  selectedPokemonId?: number;
 
   constructor() {}
 
   onClick(selectedPokemon: Pokemon) {
+    this.selectedPokemonId = selectedPokemon.id;
     this.selectPokemon.emit(selectedPokemon);
   }
 }

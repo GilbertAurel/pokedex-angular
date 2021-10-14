@@ -12,6 +12,7 @@
       *ngFor="let pokemon of pokemonList"
       (selectPokemon)="onClick($event)"
       [pokemon]="pokemon"
+      [selectedPokemonId]="selectedPokemonId"
     ></app-pokemon-card>
   </div>
   <button class="list__scroll-btn">

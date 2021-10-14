@@ -1,4 +1,8 @@
-<button class="card" (click)="onClick()">
+<button
+  class="card"
+  [ngClass]="{ 'card-selected': selectedPokemonId === pokemon.id }"
+  (click)="onClick()"
+>
   <img [src]="pokemon.details.imageUrl" alt="" />
   <p>{{ pokemon.name }}</p>
 </button>
