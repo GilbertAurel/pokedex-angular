@@ -16,6 +16,7 @@
     align-items: center;
     gap: 1rem;
     overflow-x: scroll;
+    scroll-behavior: smooth;
 
     &::-webkit-scrollbar {
       display: none;
@@ -37,6 +38,10 @@
       mat-icon {
         color: $white;
       }
+    }
+
+    & > * {
+      pointer-events: none;
     }
   }
 
