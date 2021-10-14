@@ -23,4 +23,10 @@ export class DashboardComponent implements OnInit {
   selectPokemon(selectedPokemon: Pokemon) {
     this.selectedPokemon = selectedPokemon;
   }
+
+  loadPokemon() {
+    this.pokemonService
+      .getPokemonDetails('next')
+      .subscribe((res) => (this.pokemonList = [...this.pokemonList, ...res]));
+  }
 }

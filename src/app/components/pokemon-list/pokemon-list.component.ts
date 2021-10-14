@@ -1,4 +1,10 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  HostListener,
+} from '@angular/core';
 import { Pokemon } from 'src/app/interfaces/pokemon';
 
 @Component({
@@ -9,6 +15,7 @@ import { Pokemon } from 'src/app/interfaces/pokemon';
 export class PokemonListComponent {
   @Input() pokemonList!: Pokemon[];
   @Output() selectPokemon = new EventEmitter();
+  @Output() loadPokemon = new EventEmitter();
   selectedPokemonId?: number;
 
   constructor() {}
@@ -16,5 +23,15 @@ export class PokemonListComponent {
   onClick(selectedPokemon: Pokemon) {
     this.selectedPokemonId = selectedPokemon.id;
     this.selectPokemon.emit(selectedPokemon);
+  }
+
+  @HostListener('scroll', ['$event'])
+  onScroll(event: any) {
+    const width = event.target.scrollWidth;
+    const position = event.target.scrollLeft + event.target.offsetWidth;
+
+    if (width === position) {
+      this.loadPokemon.emit();
+    }
   }
 }
