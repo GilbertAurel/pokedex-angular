@@ -4,6 +4,7 @@ import {
   Output,
   EventEmitter,
   HostListener,
+  ViewChild,
 } from '@angular/core';
 import { Pokemon } from 'src/app/interfaces/pokemon';
 
@@ -16,6 +17,7 @@ export class PokemonListComponent {
   @Input() pokemonList!: Pokemon[];
   @Output() selectPokemon = new EventEmitter();
   @Output() loadPokemon = new EventEmitter();
+  @ViewChild('list') listElement: any;
   selectedPokemonId?: number;
 
   constructor() {}
@@ -33,5 +35,15 @@ export class PokemonListComponent {
     if (width === position) {
       this.loadPokemon.emit();
     }
+  }
+
+  onScrollButtonClick(event: any) {
+    if (event.target.id === 'back') {
+      return (this.listElement.nativeElement.scrollLeft =
+        this.listElement.nativeElement.scrollLeft - 300);
+    }
+
+    return (this.listElement.nativeElement.scrollLeft =
+      this.listElement.nativeElement.scrollLeft + 300);
   }
 }
