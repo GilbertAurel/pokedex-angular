@@ -1,4 +1,7 @@
 <div class="dashboard">
-  <p>details</p>
-  <app-pokemon-list [pokemonList]="pokemonList"></app-pokemon-list>
+  <app-pokemon-details [pokemon]="selectedPokemon"></app-pokemon-details>
+  <app-pokemon-list
+    [pokemonList]="pokemonList"
+    (selectPokemon)="selectPokemon($event)"
+  ></app-pokemon-list>
 </div>

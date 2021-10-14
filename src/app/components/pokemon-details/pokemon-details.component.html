@@ -1,1 +1,4 @@
-<p>pokemon-details works!</p>
+<div *ngIf="pokemon">
+  <img [src]="pokemon.details.imageUrl" alt="" />
+  <p>{{ pokemon.name }}</p>
+</div>

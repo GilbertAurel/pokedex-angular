@@ -10,6 +10,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class DashboardComponent implements OnInit {
   pokemonList: Pokemon[] = [];
+  selectedPokemon?: Pokemon;
 
   constructor(private pokemonService: PokemonService) {}
 
@@ -17,5 +18,9 @@ export class DashboardComponent implements OnInit {
     this.pokemonService
       .getPokemonDetails('initial')
       .subscribe((res) => (this.pokemonList = res));
+  }
+
+  selectPokemon(selectedPokemon: Pokemon) {
+    this.selectedPokemon = selectedPokemon;
   }
 }
