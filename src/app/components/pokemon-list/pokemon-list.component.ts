@@ -5,6 +5,7 @@ import {
   EventEmitter,
   HostListener,
   ViewChild,
+  ElementRef,
 } from '@angular/core';
 import { Pokemon } from 'src/app/interfaces/pokemon';
 
@@ -17,7 +18,7 @@ export class PokemonListComponent {
   @Input() pokemonList!: Pokemon[];
   @Output() selectPokemon = new EventEmitter();
   @Output() loadPokemon = new EventEmitter();
-  @ViewChild('list') listElement: any;
+  @ViewChild('list') listElement!: ElementRef;
   selectedPokemonId?: number;
 
   constructor() {}
