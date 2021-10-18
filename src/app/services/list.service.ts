@@ -10,7 +10,7 @@ export class ListService {
 
   prevBtnClicked(btn: ElementRef, list: ElementRef) {
     return fromEvent(btn.nativeElement, 'click')
-      .pipe(throttle(() => interval(500)))
+      .pipe(throttle(() => interval(300)))
       .subscribe(
         () =>
           (list.nativeElement.scrollLeft = list.nativeElement.scrollLeft - 300)
@@ -19,7 +19,7 @@ export class ListService {
 
   nextBtnClicked(btn: ElementRef, list: ElementRef) {
     return fromEvent(btn.nativeElement, 'click')
-      .pipe(throttle(() => interval(500)))
+      .pipe(throttle(() => interval(300)))
       .subscribe(
         () =>
           (list.nativeElement.scrollLeft = list.nativeElement.scrollLeft + 300)
