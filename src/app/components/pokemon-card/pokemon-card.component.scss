@@ -15,6 +15,10 @@
       height: 100%;
       transition: 0.3s height;
     }
+
+    p {
+      visibility: visible;
+    }
   }
 
   &-selected {
@@ -27,5 +31,9 @@
   &__image {
     height: 80%;
     object-fit: cover;
+  }
+
+  &__name {
+    visibility: hidden;
   }
 }
