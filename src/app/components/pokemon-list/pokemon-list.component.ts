@@ -22,13 +22,13 @@ export class PokemonListComponent {
 
   constructor() {}
 
-  onClick(selectedPokemon: Pokemon) {
+  onPokemonClick(selectedPokemon: Pokemon) {
     this.selectedPokemonId = selectedPokemon.id;
     this.selectPokemon.emit(selectedPokemon);
   }
 
   @HostListener('scroll', ['$event'])
-  onScroll(event: any) {
+  onAtTheEndOfScroll(event: any) {
     const width = event.target.scrollWidth;
     const position = event.target.scrollLeft + event.target.offsetWidth;
 

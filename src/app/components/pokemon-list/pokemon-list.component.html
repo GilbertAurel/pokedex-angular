@@ -11,14 +11,13 @@
       >arrow_left</mat-icon
     >
   </button>
-  <div class="list__pokemons" (scroll)="onScroll($event)" #list>
+  <div class="list__pokemons" (scroll)="onAtTheEndOfScroll($event)" #list>
     <app-pokemon-card
       *ngFor="let pokemon of pokemonList"
-      (selectPokemon)="onClick($event)"
+      (selectPokemon)="onPokemonClick($event)"
       [pokemon]="pokemon"
       [selectedPokemonId]="selectedPokemonId"
     ></app-pokemon-card>
-    <p>loading..</p>
   </div>
   <button
     class="list__scroll-btn"
