@@ -1,9 +1,5 @@
 <div class="list">
-  <button
-    class="list__scroll-btn"
-    id="back"
-    (click)="onScrollButtonClick($event)"
-  >
+  <button class="list__scroll-btn" id="back" #prevBtn>
     <mat-icon
       class="list__arrow-icon"
       aria-hidden="false"
@@ -19,11 +15,7 @@
       [selectedPokemonId]="selectedPokemonId"
     ></app-pokemon-card>
   </div>
-  <button
-    class="list__scroll-btn"
-    id="forward"
-    (click)="onScrollButtonClick($event)"
-  >
+  <button class="list__scroll-btn" id="forward" #nextBtn>
     <mat-icon
       class="list__arrow-icon"
       aria-hidden="false"

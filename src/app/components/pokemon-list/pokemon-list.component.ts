@@ -6,7 +6,12 @@ import {
   HostListener,
   ViewChild,
   ElementRef,
+  AfterViewInit,
+  OnDestroy,
 } from '@angular/core';
+import { Subscription } from 'rxjs';
+
+import { ListService } from 'src/app/services/list.service';
 import { Pokemon } from 'src/app/interfaces/pokemon';
 
 @Component({
@@ -14,14 +19,29 @@ import { Pokemon } from 'src/app/interfaces/pokemon';
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.scss'],
 })
-export class PokemonListComponent {
+export class PokemonListComponent implements AfterViewInit, OnDestroy {
   @Input() pokemonList!: Pokemon[];
   @Output() selectPokemon = new EventEmitter();
   @Output() loadPokemon = new EventEmitter();
   @ViewChild('list') listElement!: ElementRef;
+  @ViewChild('prevBtn') prevBtn!: ElementRef;
+  @ViewChild('nextBtn') nextBtn!: ElementRef;
+  prevBtnSubscription!: Subscription;
+  nextBtnSubscription!: Subscription;
   selectedPokemonId?: number;
 
-  constructor() {}
+  constructor(private listService: ListService) {}
+
+  ngAfterViewInit() {
+    this.prevBtnSubscription = this.listService.prevBtnClicked(
+      this.prevBtn,
+      this.listElement
+    );
+    this.nextBtnSubscription = this.listService.nextBtnClicked(
+      this.nextBtn,
+      this.listElement
+    );
+  }
 
   onPokemonClick(selectedPokemon: Pokemon) {
     this.selectedPokemonId = selectedPokemon.id;
@@ -38,13 +58,8 @@ export class PokemonListComponent {
     }
   }
 
-  onScrollButtonClick(event: any) {
-    if (event.target.id === 'back') {
-      return (this.listElement.nativeElement.scrollLeft =
-        this.listElement.nativeElement.scrollLeft - 300);
-    }
-
-    return (this.listElement.nativeElement.scrollLeft =
-      this.listElement.nativeElement.scrollLeft + 300);
+  ngOnDestroy() {
+    this.prevBtnSubscription.unsubscribe();
+    this.nextBtnSubscription.unsubscribe();
   }
 }
