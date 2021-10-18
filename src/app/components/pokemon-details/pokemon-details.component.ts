@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { Pokemon } from 'src/app/interfaces/pokemon';
+import { TYPES } from 'src/app/data/types';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -9,6 +10,7 @@ import { Pokemon } from 'src/app/interfaces/pokemon';
 })
 export class PokemonDetailsComponent {
   @Input() pokemon?: Pokemon;
+  types = TYPES;
 
   constructor() {}
 }
