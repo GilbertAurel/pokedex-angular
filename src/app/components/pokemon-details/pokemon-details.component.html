@@ -1,18 +1,18 @@
-<div *ngIf="!pokemon">select pokemon below!</div>
+<div *ngIf="!pokemon" data-test="empty-alert">select pokemon below!</div>
 <div class="pokemon" *ngIf="pokemon">
-  <img [src]="pokemon.details.imageUrl" alt="" />
+  <img [src]="pokemon.details.imageUrl" alt="" data-test="image" />
   <div class="poekmon__details">
-    <p>{{ pokemon.name }}</p>
-    <p>height: {{ pokemon.details.height }}</p>
-    <p>weight {{ pokemon.details.weight }}</p>
-    <p *ngFor="let stat of pokemon.details.stats">
-      {{ stat.name }}: {{ stat.base }}
-    </p>
-    <div *ngFor="let type of pokemon.details.types">
+    <p data-test="name">{{ pokemon.name }}</p>
+    <div *ngFor="let type of pokemon.details.types" data-test="types">
       <ng-container *ngFor="let icon of types">
         <img *ngIf="type === icon.name" [src]="icon.iconUrl" alt="" />
       </ng-container>
       <p>{{ type }}</p>
     </div>
+    <p data-test="height">height: {{ pokemon.details.height }}</p>
+    <p data-test="weight">weight {{ pokemon.details.weight }}</p>
+    <p *ngFor="let stat of pokemon.details.stats" data-test="stats">
+      {{ stat.name }}: {{ stat.base }}
+    </p>
   </div>
 </div>
