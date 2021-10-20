@@ -33,6 +33,7 @@ describe('PokemonDetailsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PokemonDetailsComponent);
     component = fixture.componentInstance;
+    component.pokemon = mockPokemon;
     fixture.detectChanges();
   });
 
@@ -40,16 +41,9 @@ describe('PokemonDetailsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render no pokemon initially', () => {
-    const elements: HTMLElement = fixture.nativeElement;
-    expect(elements.querySelector('[data-test="empty-alert"]')).toBeTruthy();
-  });
-
   it('should render out pokemon data, with 2 types and 3 stats', () => {
-    component.pokemon = mockPokemon;
-    fixture.detectChanges();
-
     const elements: HTMLElement = fixture.nativeElement;
+
     expect(elements.querySelector('[data-test="image"]')).toBeTruthy();
     expect(elements.querySelector('[data-test="name"]')).toBeTruthy();
     expect(elements.querySelectorAll('[data-test="types"]')).toHaveSize(2);

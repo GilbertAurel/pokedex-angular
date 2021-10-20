@@ -1,5 +1,9 @@
 <div class="dashboard">
-  <app-pokemon-details [pokemon]="selectedPokemon"></app-pokemon-details>
+  <div *ngIf="!selectedPokemon">select pokemon below!</div>
+  <app-pokemon-details
+    *ngIf="selectedPokemon"
+    [pokemon]="selectedPokemon"
+  ></app-pokemon-details>
   <app-pokemon-list
     [pokemonList]="pokemonList"
     (selectPokemon)="selectPokemon($event)"

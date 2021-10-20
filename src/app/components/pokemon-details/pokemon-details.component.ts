@@ -9,7 +9,7 @@ import { TYPES } from 'src/app/data/types';
   styleUrls: ['./pokemon-details.component.scss'],
 })
 export class PokemonDetailsComponent {
-  @Input() pokemon?: Pokemon;
+  @Input() pokemon!: Pokemon;
   types = TYPES;
 
   constructor() {}

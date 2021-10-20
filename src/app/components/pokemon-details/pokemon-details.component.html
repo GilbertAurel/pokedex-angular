@@ -1,5 +1,4 @@
-<div *ngIf="!pokemon" data-test="empty-alert">select pokemon below!</div>
-<div class="pokemon" *ngIf="pokemon">
+<div class="pokemon">
   <img [src]="pokemon.details.imageUrl" alt="" data-test="image" />
   <div class="poekmon__details">
     <p data-test="name">{{ pokemon.name }}</p>
