@@ -1,17 +1,49 @@
 <div class="pokemon">
-  <img [src]="pokemon.details.imageUrl" alt="" data-test="image" />
-  <div class="poekmon__details">
-    <p data-test="name">{{ pokemon.name }}</p>
-    <div *ngFor="let type of pokemon.details.types" data-test="types">
-      <ng-container *ngFor="let icon of types">
-        <img *ngIf="type === icon.name" [src]="icon.iconUrl" alt="" />
-      </ng-container>
-      <p>{{ type }}</p>
+  <img
+    class="pokemon__image"
+    [src]="pokemon.details.imageUrl"
+    alt=""
+    data-test="image"
+  />
+
+  <div class="pokemon__details">
+    <div class="pokemon__details_top">
+      <p class="pokemon__name" data-test="name">{{ pokemon.name }}</p>
+      <div *ngFor="let type of pokemon.details.types" data-test="types">
+        <ng-container *ngFor="let icon of types">
+          <img
+            class="pokemon__types"
+            *ngIf="type === icon.name"
+            [src]="icon.iconUrl"
+            alt=""
+          />
+        </ng-container>
+      </div>
     </div>
-    <p data-test="height">height: {{ pokemon.details.height }}</p>
-    <p data-test="weight">weight {{ pokemon.details.weight }}</p>
-    <p *ngFor="let stat of pokemon.details.stats" data-test="stats">
-      {{ stat.name }}: {{ stat.base }}
-    </p>
+
+    <div class="pokemon__details_middle">
+      <p class="pokemon__dimension" data-test="height">
+        Height: {{ pokemon.details.height }}m
+      </p>
+      <p class="pokemon__dimension" data-test="weight">
+        Weight: {{ pokemon.details.weight }}kg
+      </p>
+    </div>
+
+    <div class="pokemon__details_bottom">
+      <h1 class="pokemon__stats_title">Stats:</h1>
+      <div
+        class="pokemon__stats"
+        *ngFor="let stat of pokemon.details.stats"
+        data-test="stats"
+      >
+        <p class="pokemon__stats_name">
+          {{ stat.name }}
+        </p>
+        <p class="pokemon__stats_base">
+          {{ stat.base }}
+        </p>
+      </div>
+    </div>
   </div>
 </div>
